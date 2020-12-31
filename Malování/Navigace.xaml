@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="Malování.Navigace"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Malování"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView SelectionChanged="NavView_SelectionChanged" IsBackEnabled="True" BackRequested="NavView_BackRequested" RequestedTheme="Default">
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Malování"/>
+                <NavigationViewItem Content="Hlavní stránka" Icon="Home" Tag="hlStranka"/>
+                <NavigationViewItem Content="Druhá stránka" Icon="Page" Tag="vedlejsiStranka"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Informace"/>
+                <NavigationViewItem Content="O aplikaci" Icon="AlignCenter" Tag="oAplikaciStranka"/>
+            </NavigationView.MenuItems>
+            <Frame RequestedTheme="Default" x:Name="ObsahStranky">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Page>

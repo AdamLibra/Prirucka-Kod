@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="Malování.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Malování"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid RequestedTheme="Default">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Height="100" FontSize="60" TextAlignment="Center" Foreground="#ffffff" Margin="0,0,-2,0">Malování</TextBlock>
+        <InkCanvas Grid.Row="1" Name="myInkCanvas" Grid.Column="1"/>
+        <InkToolbar TargetInkCanvas="{x:Bind myInkCanvas}" Grid.Column="1" Margin="21,0,523,0"/>
+        <ListBox Grid.Row="1" Name="MyList" Margin="10,10,10,0"/>
+        <Button Name="SaveImage" Grid.Row="0" Grid.Column="0"  Height="100" Width="100">
+            <StackPanel>
+                <Image Source="Assets/check.png"/>
+            </StackPanel>
+        </Button>
+
+
+    </Grid>
+
+</Page>
